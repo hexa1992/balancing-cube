@@ -15,9 +15,6 @@
 #include <ArduinoOTA.h>
 #endif
 
-meine dumme änderung
-
-
 // Cube controller library
 #include "src/cube-controller.h"
 #include "Arduino.h"
@@ -85,6 +82,10 @@ void setup()
 
   // Mode selection
   modeselection();
+
+  att_tra.set_reference(MODE);
+
+
   																					 	     			 										
 #if OTA
   // Set up WiFi connection

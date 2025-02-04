@@ -2,11 +2,7 @@
 
 // Constructor
 AttitudeTrajectory::AttitudeTrajectory() {
-    // Initial reference quaternion
-    qr0 = qu0;
-    qr1 = qu1;
-    qr2 = qu2;
-    qr3 = qu3;
+
 
     // Reference angular velocities for cube
     omega_r_x = 0.0;
@@ -37,6 +33,36 @@ AttitudeTrajectory::AttitudeTrajectory() {
 void AttitudeTrajectory::init() {
     // Start timer
     timer = micros();
+}
+
+
+
+void AttitudeTrajectory::set_reference(int mode) {
+    if(mode == 0) {
+        // Quaternion reference (Cubli sitting on x axis edge, corrected for center of mass misalignment)
+        qu0 = qu0_x;
+        qu1 = qu1_x;
+        qu2 = qu2_x;
+        qu3 = qu3_x;
+    } else if(mode == 1) {
+        // Quaternion reference (Cubli sitting on y axis edge, corrected for center of mass misalignment)
+        qu0 = qu0_y;
+        qu1 = qu1_y;
+        qu2 = qu2_y;
+        qu3 = qu3_y;
+    } else {
+        // Quaternion reference (Cubli sitting on on corner, corrected for center of mass misalignment)
+        qu0 = qu0_corner;
+        qu1 = qu1_corner;
+        qu2 = qu2_corner;
+        qu3 = qu3_corner;
+    }
+
+    // Initial reference quaterni1n
+    qr0 = qu0;
+    qr1 = qu1;
+    qr2 = qu2;
+    qr3 = qu3;
 }
 
 // Generate step

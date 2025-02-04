@@ -68,37 +68,37 @@ const float kdw = 0.02;
 
 // One out of three of the following initial reference quaternions should be uncommented
 // Quaternion reference (Cubli sitting on on corner, corrected for center of mass misalignment)
- const float phi_e = 0 * pi / 180.0;
- const float qu0 =                    cos(phi_e / 2.0 + acos(sqrt(3.0) / 3.0) / 2.0);
- const float qu1 =  sqrt(2.0) / 2.0 * sin(phi_e / 2.0 + acos(sqrt(3.0) / 3.0) / 2.0);
- const float qu2 = -sqrt(2.0) / 2.0 * sin(phi_e / 2.0 + acos(sqrt(3.0) / 3.0) / 2.0);
- const float qu3 =  0.0;
+ const float phi_e_corner = 0 * pi / 180.0;
+ const float qu0_corner =                    cos(phi_e_corner / 2.0 + acos(sqrt(3.0) / 3.0) / 2.0);
+ const float qu1_corner =  sqrt(2.0) / 2.0 * sin(phi_e_corner / 2.0 + acos(sqrt(3.0) / 3.0) / 2.0);
+ const float qu2_corner = -sqrt(2.0) / 2.0 * sin(phi_e_corner / 2.0 + acos(sqrt(3.0) / 3.0) / 2.0);
+ const float qu3_corner =  0.0;
 
 // Quaternion reference (Cubli sitting on x axis edge, corrected for center of mass misalignment)
-// const float phi_e_x = -3.0 * pi / 180.0;
-// const float qu0_x = cos(phi_e / 2.0 - pi / 8.0);
-// const float qu1_x = cos(phi_e / 2.0 + 3.0 * pi / 8.0);
-// const float qu2_x = 0.0;
-// const float qu3_x = 0.0;
+const float phi_e_x = -3.0 * pi / 180.0;
+const float qu0_x = cos(phi_e_x / 2.0 - pi / 8.0);
+const float qu1_x = cos(phi_e_x / 2.0 + 3.0 * pi / 8.0);
+const float qu2_x = 0.0;
+const float qu3_x = 0.0;
 
 // Quaternion reference (Cubli sitting on y axis edge, corrected for center of mass misalignment)
-// const float phi_e_y = -3.0 * pi / 180.0;
-// const float qu0_y = cos(phi_e / 2.0 - pi / 8.0);
-// const float qu1_y = 0.0;
-// const float qu2_y = -cos(phi_e / 2.0 + 3.0 * pi / 8.0);
-// const float qu3_y = 0.0;
+const float phi_e_y = -3.0 * pi / 180.0;
+const float qu0_y = cos(phi_e_y / 2.0 - pi / 8.0);
+const float qu1_y = 0.0;
+const float qu2_y = -cos(phi_e_y / 2.0 + 3.0 * pi / 8.0);
+const float qu3_y = 0.0;
 
-// Quaternion stuff
-const float qu0_qu0 = qu0 * qu0;
-const float qu0_qu1 = qu0 * qu1;
-const float qu0_qu2 = qu0 * qu2;
-const float qu0_qu3 = qu0 * qu3;
-const float qu1_qu1 = qu1 * qu1;
-const float qu1_qu2 = qu1 * qu2;
-const float qu1_qu3 = qu1 * qu3;
-const float qu2_qu2 = qu2 * qu2;
-const float qu2_qu3 = qu2 * qu3;
-const float qu3_qu3 = qu3 * qu3;
+// // Quaternion stuff
+// const float qu0_qu0 = qu0 * qu0;
+// const float qu0_qu1 = qu0 * qu1;
+// const float qu0_qu2 = qu0 * qu2;
+// const float qu0_qu3 = qu0 * qu3;
+// const float qu1_qu1 = qu1 * qu1;
+// const float qu1_qu2 = qu1 * qu2;
+// const float qu1_qu3 = qu1 * qu3;
+// const float qu2_qu2 = qu2 * qu2;
+// const float qu2_qu3 = qu2 * qu3;
+// const float qu3_qu3 = qu3 * qu3;
 
 // Minimum and maximum error limits (for control safety)
 const float phi_min = 5.0 * pi / 180.0;
